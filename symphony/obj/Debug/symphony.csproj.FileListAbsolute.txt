@@ -1,0 +1,36 @@
+C:\Users\Mike\Documents\My Data\Intermedia\symphony\symphony\bin\Debug\symphony.exe.config
+C:\Users\Mike\Documents\My Data\Intermedia\symphony\symphony\bin\Debug\symphony.exe
+C:\Users\Mike\Documents\My Data\Intermedia\symphony\symphony\bin\Debug\symphony.pdb
+C:\Users\Mike\Documents\My Data\Intermedia\symphony\symphony\bin\Debug\Interop.WMPLib.dll
+C:\Users\Mike\Documents\My Data\Intermedia\symphony\symphony\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Mike\Documents\My Data\Intermedia\symphony\symphony\obj\Debug\symphony.csprojResolveAssemblyReference.cache
+C:\Users\Mike\Documents\My Data\Intermedia\symphony\symphony\obj\Debug\Interop.WMPLib.dll
+C:\Users\Mike\Documents\My Data\Intermedia\symphony\symphony\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Mike\Documents\My Data\Intermedia\symphony\symphony\obj\Debug\symphony.csproj.ResolveComReference.cache
+C:\Users\Mike\Documents\My Data\Intermedia\symphony\symphony\obj\Debug\symphony.frmHome.resources
+C:\Users\Mike\Documents\My Data\Intermedia\symphony\symphony\obj\Debug\symphony.FrmLoad.resources
+C:\Users\Mike\Documents\My Data\Intermedia\symphony\symphony\obj\Debug\symphony.Properties.Resources.resources
+C:\Users\Mike\Documents\My Data\Intermedia\symphony\symphony\obj\Debug\symphony.csproj.GenerateResource.Cache
+C:\Users\Mike\Documents\My Data\Intermedia\symphony\symphony\obj\Debug\symphony.exe
+C:\Users\Mike\Documents\My Data\Intermedia\symphony\symphony\obj\Debug\symphony.pdb
+C:\Users\Mike\Documents\My Data\Intermedia\symphony\symphony\obj\Debug\symphony.About.resources
+C:\Users\Mike\Documents\My Data\Intermedia\symphony\symphony\obj\Debug\symphony.frmBrowser.resources
+C:\Users\Mike\Documents\symphony\symphony\bin\Debug\symphony.exe.config
+C:\Users\Mike\Documents\symphony\symphony\obj\Debug\Interop.WMPLib.dll
+C:\Users\Mike\Documents\symphony\symphony\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Mike\Documents\symphony\symphony\obj\Debug\symphony.csproj.ResolveComReference.cache
+C:\Users\Mike\Documents\symphony\symphony\obj\Debug\symphony.exe
+C:\Users\Mike\Documents\symphony\symphony\obj\Debug\symphony.pdb
+C:\Users\Mike\Documents\symphony\symphony\bin\Debug\symphony.exe
+C:\Users\Mike\Documents\symphony\symphony\bin\Debug\symphony.pdb
+C:\Users\Mike\Documents\symphony\symphony\bin\Debug\Interop.WMPLib.dll
+C:\Users\Mike\Documents\symphony\symphony\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Mike\Documents\symphony\symphony\obj\Debug\symphony.csprojResolveAssemblyReference.cache
+C:\Users\Mike\Documents\symphony\symphony\obj\Debug\symphony.About.resources
+C:\Users\Mike\Documents\symphony\symphony\obj\Debug\symphony.frmBrowser.resources
+C:\Users\Mike\Documents\symphony\symphony\obj\Debug\symphony.frmHome.resources
+C:\Users\Mike\Documents\symphony\symphony\obj\Debug\symphony.FrmLoad.resources
+C:\Users\Mike\Documents\symphony\symphony\obj\Debug\symphony.Properties.Resources.resources
+C:\Users\Mike\Documents\symphony\symphony\obj\Debug\symphony.csproj.GenerateResource.Cache
+C:\Users\Mike\Documents\symphony\symphony\obj\Debug\symphony.frmCreatePlaylist.resources
+C:\Users\Mike\Documents\symphony\symphony\obj\Debug\symphony.frmCustomize.resources
