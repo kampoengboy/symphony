@@ -17,7 +17,19 @@ namespace symphony
         {
             InitializeComponent();
         }
-        public string[] files, paths;
+        public string[] attr;
+        public bool isJump = false;
+        public double duration;
+        public void changeTime()
+        {
+            this.Text = isJump.ToString();
+            /*if(isJump==true)
+            {
+                this.Text = "Yes";
+                axWindowsMediaPlayer1.Ctlcontrols.currentPosition+= duration;
+                isJump = false;
+            }*/
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             Stream myStream = null;
@@ -86,29 +98,35 @@ namespace symphony
                         axWindowsMediaPlayer1.currentPlaylist = playlist;
                         axWindowsMediaPlayer1.Ctlcontrols.play();
                     }
-                    //for(int dobel = 0; dobel < x.Count; dobel++)
-                    //{
-                    //    if (i == x[dobel])
-                    //    {
-                    //        cek = false;
-                    //        break;
-                    //    }
-                    //}
-                    //if (cek)
-                    //{
-                    //    x.Add(i);
-                    //    media = axWindowsMediaPlayer1.newMedia(listView1.Items[i].SubItems[1].Text);
-                    //    playlist.appendItem(media);
-                    //    axWindowsMediaPlayer1.currentPlaylist = playlist;
-                    //    axWindowsMediaPlayer1.Ctlcontrols.play();
-                    //}
                 } 
             }
         }
 
         private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            axWindowsMediaPlayer1.URL = listView1.SelectedItems[0].SubItems[1].Text;
+            WMPLib.IWMPMedia media = axWindowsMediaPlayer1.newMedia(listView1.SelectedItems[0].SubItems[1].Text);
+            WMPLib.IWMPPlaylist playlist = axWindowsMediaPlayer1.playlistCollection.newPlaylist("myPlaylist");
+            for (int idx = listView1.SelectedItems[0].Index; idx < listView1.Items.Count; idx++)
+            {
+                  media = axWindowsMediaPlayer1.newMedia(listView1.Items[idx].SubItems[1].Text);
+                  playlist.appendItem(media);
+                  axWindowsMediaPlayer1.currentPlaylist = playlist;
+                  axWindowsMediaPlayer1.Ctlcontrols.play();
+            }
+            viewfileinfo view = new viewfileinfo();
+            view.attr[0] = media.getItemInfo("Track").ToString();
+            view.attr[1] = media.getItemInfo("Disc").ToString();
+            view.attr[2] = media.getItemInfo("BPM").ToString();
+            view.attr[3] = media.name.ToString();
+            view.attr[4] = media.getItemInfo("Artist").ToString();
+            view.attr[5] = media.getItemInfo("Album").ToString();
+            view.attr[6] = media.getItemInfo("Album Artist").ToString();
+            view.attr[7] = media.getItemInfo("Year").ToString();
+            view.attr[8] = media.getItemInfo("Genre").ToString();
+            view.attr[9] = media.getItemInfo("Comment").ToString();
+            view.attr[10] = media.getItemInfo("Composer").ToString();
+            view.attr[11] = media.getItemInfo("Publisher").ToString();
+            view.attr[12] = listView1.SelectedItems[0].SubItems[1].Text;
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -154,8 +172,21 @@ namespace symphony
                 {
                     var loc = e.Location;
                     loc.Offset(listView1.Location);
-
-                    // Adjust context menu (or it's contents) based on hitTestInfo details
+                    viewfileinfo view = new viewfileinfo();
+                    WMPLib.IWMPMedia media = axWindowsMediaPlayer1.newMedia(listView1.SelectedItems[0].SubItems[1].Text);
+                    view.attr[0] = media.getItemInfo("Track").ToString();
+                    view.attr[1] = media.getItemInfo("Disc").ToString();
+                    view.attr[2] = media.getItemInfo("BPM").ToString();
+                    view.attr[3] = media.name.ToString();
+                    view.attr[4] = media.getItemInfo("Artist").ToString();
+                    view.attr[5] = media.getItemInfo("Album").ToString();
+                    view.attr[6] = media.getItemInfo("Album Artist").ToString();
+                    view.attr[7] = media.getItemInfo("Year").ToString();
+                    view.attr[8] = media.getItemInfo("Genre").ToString();
+                    view.attr[9] = media.getItemInfo("Comment").ToString();
+                    view.attr[10] = media.getItemInfo("Composer").ToString();
+                    view.attr[11] = media.getItemInfo("Publisher").ToString();
+                    view.attr[12] = listView1.SelectedItems[0].SubItems[1].Text;
                     this.contextMenuStrip2.Show(this, loc);
                 }
             }
@@ -163,13 +194,27 @@ namespace symphony
 
         private void frmHome_Load(object sender, EventArgs e)
         {
+            attr = new string[15];
         }
 
         private void viewToolStripMenuItem_Click(object sender, EventArgs e)
         {
             viewfileinfo view = new viewfileinfo();
-
-            view.ShowDialog();
+            WMPLib.IWMPMedia media = axWindowsMediaPlayer1.newMedia(listView1.SelectedItems[0].SubItems[1].Text);
+            view.attr[0] = media.getItemInfo("Track").ToString();
+            view.attr[1] = media.getItemInfo("Disc").ToString();
+            view.attr[2] = media.getItemInfo("BPM").ToString();
+            view.attr[3] = media.name.ToString();
+            view.attr[4] = media.getItemInfo("Artist").ToString();
+            view.attr[5] = media.getItemInfo("Album").ToString();
+            view.attr[6] = media.getItemInfo("Album Artist").ToString();
+            view.attr[7] = media.getItemInfo("Year").ToString();
+            view.attr[8] = media.getItemInfo("Genre").ToString();
+            view.attr[9] = media.getItemInfo("Comment").ToString();
+            view.attr[10] = media.getItemInfo("Composer").ToString();
+            view.attr[11] = media.getItemInfo("Publisher").ToString();
+            view.attr[12] = listView1.SelectedItems[0].SubItems[1].Text;
+            view.Show();
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -181,7 +226,12 @@ namespace symphony
         private void jumpToTimeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             jumptotime jumptime = new jumptotime();
-            jumptime.Show();
+            duration = axWindowsMediaPlayer1.Ctlcontrols.currentPosition;
+            jumptime.duration = axWindowsMediaPlayer1.Ctlcontrols.currentPosition;
+            jumptime.ShowDialog();
+            this.Text = isJump.ToString();
         }
+
+        
     }
 }
