@@ -54,3 +54,6 @@ C:\Users\acer\Documents\symphony\symphony\obj\Debug\symphony.FrmLoad.resources
 C:\Users\acer\Documents\symphony\symphony\obj\Debug\symphony.Properties.Resources.resources
 C:\Users\acer\Documents\symphony\symphony\obj\Debug\symphony.csproj.GenerateResource.Cache
 C:\Users\acer\Documents\symphony\symphony\obj\Debug\symphony.viewfileinfo.resources
+C:\Users\Mike\Documents\symphony\symphony\obj\Debug\symphony.viewfileinfo.resources
+C:\Users\Mike\Documents\symphony\symphony\obj\Debug\symphony.jumptotime.resources
+C:\Users\Mike\Documents\symphony\symphony\obj\Debug\symphony.jumptotrack.resources

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHome));
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.btnChoosePlaylist = new System.Windows.Forms.Button();
@@ -44,14 +45,17 @@
             this.viewPlaylistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.appsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.browserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.othelloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.symphonyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.playToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.jumpToTimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.playfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            this.contextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // axWindowsMediaPlayer1
@@ -84,6 +88,7 @@
             this.listView1.TabIndex = 3;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseClick);
             this.listView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseDoubleClick);
             // 
             // Title
@@ -111,9 +116,9 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.playlistToolStripMenuItem,
+            this.playToolStripMenuItem,
             this.appsToolStripMenuItem,
-            this.aboutToolStripMenuItem,
-            this.playToolStripMenuItem});
+            this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1031, 24);
@@ -157,6 +162,7 @@
             this.customizePlaylistToolStripMenuItem.Name = "customizePlaylistToolStripMenuItem";
             this.customizePlaylistToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.customizePlaylistToolStripMenuItem.Text = "Customize Playlist";
+            this.customizePlaylistToolStripMenuItem.Click += new System.EventHandler(this.customizePlaylistToolStripMenuItem_Click);
             // 
             // viewPlaylistToolStripMenuItem
             // 
@@ -167,8 +173,7 @@
             // appsToolStripMenuItem
             // 
             this.appsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.browserToolStripMenuItem,
-            this.othelloToolStripMenuItem});
+            this.browserToolStripMenuItem});
             this.appsToolStripMenuItem.Name = "appsToolStripMenuItem";
             this.appsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.appsToolStripMenuItem.Text = "Apps";
@@ -179,12 +184,6 @@
             this.browserToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.browserToolStripMenuItem.Text = "Browser";
             this.browserToolStripMenuItem.Click += new System.EventHandler(this.browserToolStripMenuItem_Click);
-            // 
-            // othelloToolStripMenuItem
-            // 
-            this.othelloToolStripMenuItem.Name = "othelloToolStripMenuItem";
-            this.othelloToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-            this.othelloToolStripMenuItem.Text = "Othello";
             // 
             // aboutToolStripMenuItem
             // 
@@ -197,7 +196,7 @@
             // symphonyToolStripMenuItem
             // 
             this.symphonyToolStripMenuItem.Name = "symphonyToolStripMenuItem";
-            this.symphonyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.symphonyToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.symphonyToolStripMenuItem.Text = "Symphony";
             this.symphonyToolStripMenuItem.Click += new System.EventHandler(this.symphonyToolStripMenuItem_Click);
             // 
@@ -215,12 +214,36 @@
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem1.Text = "Jump To Track";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // jumpToTimeToolStripMenuItem
             // 
             this.jumpToTimeToolStripMenuItem.Name = "jumpToTimeToolStripMenuItem";
             this.jumpToTimeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.jumpToTimeToolStripMenuItem.Text = "Jump To Time";
+            this.jumpToTimeToolStripMenuItem.Click += new System.EventHandler(this.jumpToTimeToolStripMenuItem_Click);
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewToolStripMenuItem,
+            this.playfileToolStripMenuItem});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(145, 48);
+            this.contextMenuStrip2.Text = "Yo";
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.viewToolStripMenuItem.Text = "View File Info";
+            this.viewToolStripMenuItem.Click += new System.EventHandler(this.viewToolStripMenuItem_Click);
+            // 
+            // playfileToolStripMenuItem
+            // 
+            this.playfileToolStripMenuItem.Name = "playfileToolStripMenuItem";
+            this.playfileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.playfileToolStripMenuItem.Text = "Play";
             // 
             // frmHome
             // 
@@ -238,9 +261,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Symphony";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmHome_FormClosed);
+            this.Load += new System.EventHandler(this.frmHome_Load);
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.contextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -259,7 +284,6 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem appsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem browserToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem othelloToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem symphonyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newPlaylistToolStripMenuItem;
@@ -269,5 +293,8 @@
         private System.Windows.Forms.ToolStripMenuItem playToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem jumpToTimeToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem playfileToolStripMenuItem;
     }
 }

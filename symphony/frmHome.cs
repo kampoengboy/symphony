@@ -66,7 +66,7 @@ namespace symphony
             List<int> x = new List<int>();
             for (int idx = 0; idx < listView1.Items.Count; idx++)
             {
-                int i = a.Next(0, listView1.Items.Count);
+                int i = a.Next(0, listView1.Items.Count+1);
                 if (x.Count == 0)
                 {
                     x.Add(i);
@@ -137,6 +137,51 @@ namespace symphony
         {
             frmCreatePlaylist createplaylist = new frmCreatePlaylist();
             createplaylist.Show();
+        }
+
+        private void customizePlaylistToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCustomize customize = new frmCustomize();
+            customize.Show();
+        }
+
+        private void listView1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                var hitTestInfo = listView1.HitTest(e.X, e.Y);
+                if (hitTestInfo.Item != null)
+                {
+                    var loc = e.Location;
+                    loc.Offset(listView1.Location);
+
+                    // Adjust context menu (or it's contents) based on hitTestInfo details
+                    this.contextMenuStrip2.Show(this, loc);
+                }
+            }
+        }
+
+        private void frmHome_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void viewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            viewfileinfo view = new viewfileinfo();
+
+            view.ShowDialog();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            jumptotrack jumptrack = new jumptotrack();
+            jumptrack.Show();
+        }
+
+        private void jumpToTimeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            jumptotime jumptime = new jumptotime();
+            jumptime.Show();
         }
     }
 }
