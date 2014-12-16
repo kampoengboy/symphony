@@ -67,9 +67,14 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
+            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "jumptotime";
             this.Text = "Jump to Time";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.jumptotime_FormClosed);
             this.Load += new System.EventHandler(this.jumptotime_Load);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.textBox1, 0);
+            this.Controls.SetChildIndex(this.button1, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 

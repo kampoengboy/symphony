@@ -50,6 +50,7 @@
     <Compile Include="About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
+    <Compile Include="clsTransfer.cs" />
     <Compile Include="frmBrowser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,7 +95,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="testing.cs" />
     <Compile Include="viewfileinfo.cs">
       <SubType>Form</SubType>
     </Compile>

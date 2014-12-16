@@ -17,17 +17,21 @@ namespace symphony
             InitializeComponent();
         }
         public double duration;
+        public bool state = false;
         private void button1_Click(object sender, EventArgs e)
         {
-            frmHome home = new frmHome();
-            home.duration = Convert.ToDouble(textBox1.Text);
-            home.isJump = true;
-            home.changeTime();
+            duration = Convert.ToDouble(textBox1.Text);
+            state = true;
+            this.Close();
         }
 
         private void jumptotime_Load(object sender, EventArgs e)
         {
-            textBox1.Text = duration.ToString();
+            textBox1.Text = "0";
+        }
+
+        private void jumptotime_FormClosed(object sender, FormClosedEventArgs e)
+        {
         }
     }
 }

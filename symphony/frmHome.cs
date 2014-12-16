@@ -13,6 +13,7 @@ namespace symphony
 {
     public partial class frmHome : Form
     {
+         
         public frmHome()
         {
             InitializeComponent();
@@ -20,15 +21,9 @@ namespace symphony
         public string[] attr;
         public bool isJump = false;
         public double duration;
-        public void changeTime()
+        public void changeTime(double dur)
         {
-            this.Text = isJump.ToString();
-            /*if(isJump==true)
-            {
-                this.Text = "Yes";
-                axWindowsMediaPlayer1.Ctlcontrols.currentPosition+= duration;
-                isJump = false;
-            }*/
+            axWindowsMediaPlayer1.Ctlcontrols.currentPosition+= dur;
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -220,16 +215,36 @@ namespace symphony
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             jumptotrack jumptrack = new jumptotrack();
-            jumptrack.Show();
+            Tuple<string, string> song;
+            for (int i = 0; i < listView1.Items.Count;i++ )
+            {
+                song = new Tuple<string, string>(listView1.Items[i].SubItems[0].Text, listView1.Items[i].SubItems[1].Text); 
+                jumptrack.track.Add(song);
+            }
+            jumptrack.ShowDialog();
+            if(jumptrack.state)
+            {
+                WMPLib.IWMPMedia media = axWindowsMediaPlayer1.newMedia(listView1.Items[jumptrack.idx].SubItems[1].Text);
+                WMPLib.IWMPPlaylist playlist = axWindowsMediaPlayer1.playlistCollection.newPlaylist("myPlaylist");
+                for (int idx = jumptrack.idx; idx < listView1.Items.Count; idx++)
+                {
+                    media = axWindowsMediaPlayer1.newMedia(listView1.Items[idx].SubItems[1].Text);
+                    playlist.appendItem(media);
+                    axWindowsMediaPlayer1.currentPlaylist = playlist;
+                    axWindowsMediaPlayer1.Ctlcontrols.play();
+                }
+            }
         }
 
         private void jumpToTimeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        {  
             jumptotime jumptime = new jumptotime();
             duration = axWindowsMediaPlayer1.Ctlcontrols.currentPosition;
-            jumptime.duration = axWindowsMediaPlayer1.Ctlcontrols.currentPosition;
             jumptime.ShowDialog();
-            this.Text = isJump.ToString();
+            if(jumptime.state)
+            {
+                changeTime(jumptime.duration);
+            }
         }
 
         
