@@ -17,24 +17,18 @@ namespace symphony
             InitializeComponent();
         }
         public bool state = false;
-        public string[] song = new string[2];
-        public List<Tuple<string,string> > track = new List<Tuple<string,string> >();
+        public List<string> track = new List<string>();
         public int idx;
         private void jumptotrack_Load(object sender, EventArgs e)
         {
             for(int i=0;i<track.Count;i++)
             {
-                string[] saLvwItem = new string[2];
-                saLvwItem[0] = track[i].Item1;
-                saLvwItem[1] = track[i].Item2;
-                ListViewItem lvi = new ListViewItem(saLvwItem);
-                listView1.Items.Add(lvi);
+                listBox1.Items.Add(track[i]);
             }
         }
-
-        private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void listBox1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            idx = listView1.SelectedItems[0].Index;
+            idx = listBox1.SelectedIndex;
             state = true;
             this.Close();
         }
