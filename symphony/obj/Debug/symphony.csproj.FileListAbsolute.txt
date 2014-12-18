@@ -57,3 +57,4 @@ C:\Users\acer\Documents\symphony\symphony\obj\Debug\symphony.viewfileinfo.resour
 C:\Users\Mike\Documents\symphony\symphony\obj\Debug\symphony.viewfileinfo.resources
 C:\Users\Mike\Documents\symphony\symphony\obj\Debug\symphony.jumptotime.resources
 C:\Users\Mike\Documents\symphony\symphony\obj\Debug\symphony.jumptotrack.resources
+C:\Users\Mike\Documents\symphony\symphony\obj\Debug\symphony.frmPlaylist.resources

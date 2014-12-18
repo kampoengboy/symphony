@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Data.SqlClient;
 
 namespace symphony
 {
@@ -17,6 +18,7 @@ namespace symphony
         {
             InitializeComponent();
         }
+        SqlConnection conn;
         public string[] attr;
         public bool state = false;
         public double duration;
@@ -29,31 +31,41 @@ namespace symphony
         private string[] files, path;
         private void button1_Click(object sender, EventArgs e)
         {
-            Stream myStream = null;
-            OpenFileDialog open = new OpenFileDialog();
-            open.InitialDirectory = "C:\\";
-            open.Filter = "MP3 Audio File(*.mp3)|*.mp3";
-            open.FilterIndex = 1;
-            open.RestoreDirectory = false;
-            open.Multiselect = true;
-            try
+            frmPlaylist playlist = new frmPlaylist();
+            playlist.ShowDialog();
+            if(playlist.state)
             {
-                if (open.ShowDialog() == DialogResult.OK)
+                for (int i = 0; i < playlist.list.Count; i++)
                 {
-                    files = open.SafeFileNames;
-                    path = open.FileNames;
-                    for (int i = 0; i < files.Length; i++)
-                    {
-                        listBox1.Items.Add(files[i]);
-                        paths.Add(path[i]);
-                    }
-                    
+                    listBox1.Items.Add(playlist.list[i].Item1);
+                    paths.Add(playlist.list[i].Item2);
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error : Could not read file from disk.");
-            }
+            //Stream myStream = null;
+            //OpenFileDialog open = new OpenFileDialog();
+            //open.InitialDirectory = "C:\\";
+            //open.Filter = "MP3 Audio File(*.mp3)|*.mp3";
+            //open.FilterIndex = 1;
+            //open.RestoreDirectory = false;
+            //open.Multiselect = true;
+            //try
+            //{
+            //    if (open.ShowDialog() == DialogResult.OK)
+            //    {
+            //        files = open.SafeFileNames;
+            //        path = open.FileNames;
+            //        for (int i = 0; i < files.Length; i++)
+            //        {
+            //            listBox1.Items.Add(files[i]);
+            //            paths.Add(path[i]);
+            //        }
+                    
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Error : Could not read file from disk.");
+            //}
         }
 
         private void btnPlayAll_Click(object sender, EventArgs e)
@@ -123,13 +135,23 @@ namespace symphony
         {
             attr = new string[15];
             trackBar2.Value = 109;
-            //tracklabel.Text = "";
+            tracklabel.Text = "00:00";
+            string pesan,sql;
+            //try
+            //{
+            //    conn = new SqlConnection("Server=localhost; Database=symphony; Integrated Security=SSPI");
+            //    conn.Open();
+            //}
+            //catch (SqlException ex)
+            //{
+            //    MessageBox.Show("Database Error");
+            //}
         }
 
         private void viewToolStripMenuItem_Click(object sender, EventArgs e)
         {
             viewfileinfo view = new viewfileinfo();
-            WMPLib.IWMPMedia media = axWindowsMediaPlayer1.newMedia(path[listBox1.SelectedIndex]);
+            WMPLib.IWMPMedia media = axWindowsMediaPlayer1.newMedia(paths[listBox1.SelectedIndex]);
             view.attr[0] = media.getItemInfo("Track").ToString();
             view.attr[1] = media.getItemInfo("Disc").ToString();
             view.attr[2] = media.getItemInfo("BPM").ToString();
@@ -332,7 +354,6 @@ namespace symphony
         {
             axWindowsMediaPlayer1.Ctlcontrols.stop();
             timer1.Enabled = false;
-        }
-        
+        }        
     }
 }

@@ -81,6 +81,12 @@
     <Compile Include="FrmLoad.Designer.cs">
       <DependentUpon>FrmLoad.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPlaylist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPlaylist.Designer.cs">
+      <DependentUpon>frmPlaylist.cs</DependentUpon>
+    </Compile>
     <Compile Include="jumptotime.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLoad.resx">
       <DependentUpon>FrmLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPlaylist.resx">
+      <DependentUpon>frmPlaylist.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="jumptotime.resx">
       <DependentUpon>jumptotime.cs</DependentUpon>
