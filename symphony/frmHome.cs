@@ -354,6 +354,12 @@ namespace symphony
         {
             axWindowsMediaPlayer1.Ctlcontrols.stop();
             timer1.Enabled = false;
+        }
+
+        private void viewPlaylistToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmView view = new frmView();
+            view.Show();
         }        
     }
 }

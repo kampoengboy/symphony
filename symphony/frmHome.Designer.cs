@@ -38,7 +38,6 @@
             this.newPlaylistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.playlistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customizePlaylistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewPlaylistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.playToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -126,38 +125,31 @@
             // newPlaylistToolStripMenuItem
             // 
             this.newPlaylistToolStripMenuItem.Name = "newPlaylistToolStripMenuItem";
-            this.newPlaylistToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newPlaylistToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.newPlaylistToolStripMenuItem.Text = "New Playlist";
             this.newPlaylistToolStripMenuItem.Click += new System.EventHandler(this.newPlaylistToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // playlistToolStripMenuItem
             // 
             this.playlistToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.customizePlaylistToolStripMenuItem,
             this.viewPlaylistToolStripMenuItem});
             this.playlistToolStripMenuItem.Name = "playlistToolStripMenuItem";
             this.playlistToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.playlistToolStripMenuItem.Text = "Playlist";
-            // 
-            // customizePlaylistToolStripMenuItem
-            // 
-            this.customizePlaylistToolStripMenuItem.Name = "customizePlaylistToolStripMenuItem";
-            this.customizePlaylistToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.customizePlaylistToolStripMenuItem.Text = "Customize Playlist";
-            this.customizePlaylistToolStripMenuItem.Click += new System.EventHandler(this.customizePlaylistToolStripMenuItem_Click);
             // 
             // viewPlaylistToolStripMenuItem
             // 
             this.viewPlaylistToolStripMenuItem.Name = "viewPlaylistToolStripMenuItem";
             this.viewPlaylistToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.viewPlaylistToolStripMenuItem.Text = "View Playlist";
+            this.viewPlaylistToolStripMenuItem.Click += new System.EventHandler(this.viewPlaylistToolStripMenuItem_Click);
             // 
             // playToolStripMenuItem
             // 
@@ -397,7 +389,6 @@
         private System.Windows.Forms.ToolStripMenuItem symphonyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newPlaylistToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem playlistToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem customizePlaylistToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewPlaylistToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem playToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
