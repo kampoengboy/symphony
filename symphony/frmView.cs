@@ -102,13 +102,9 @@ namespace symphony
                 ds = new DataSet();
                 da = new SqlDataAdapter("SELECT * FROM Song WHERE IDPlaylist='"+id[listBox1.SelectedIndex]+"'", conn);
                 da.Fill(ds, "Song");
-                DataRowCollection dt = ds.Tables["Song"].Rows;
-                for (int i = 0; i < dt.Count;i++ )
-                {
-                    query = "DELETE FROM Song WHERE ID_Song='" + dt[0]["ID_Song"] + "'";
-                    cmd = new SqlCommand(query, conn);
-                    cmd.ExecuteNonQuery();
-                }
+                query = "DELETE FROM Song WHERE IDPlaylist='" + id[listBox1.SelectedIndex] + "'";
+                cmd = new SqlCommand(query, conn);
+                cmd.ExecuteNonQuery();
                 query = "DELETE FROM Playlist WHERE IDPlaylist='" + id[listBox1.SelectedIndex] + "'";
                 cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();

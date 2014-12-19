@@ -31,24 +31,16 @@ namespace symphony
                 string id2, query;
                 int xx;
                 bool state = false;
-                da = new SqlDataAdapter("SELECT * FROM Song ORDER BY ID_Song", conn);
+                da = new SqlDataAdapter("SELECT * FROM Song", conn);
                 da.Fill(ds, "Song");
                 DataRowCollection dt2 = ds.Tables["Song"].Rows;
-                //MessageBox.Show("DT2Count = " + dt2.Count);
                 //CHECK FOR THE SPACE ROW
-                //for(int k=0;k<dt2.Count-1;k++)
-                //{
-                //    MessageBox.Show(dt2[k]["ID_Song"].ToString());
-                //    MessageBox.Show(dt2[k]["Name"].ToString());
-                //}
-                for (int k = 1; k <= dt2.Count-1; k++)
+                for (int k = 1; k <= dt2.Count; k++)
                 {
                     int nn = k / 10;
                     id2 = dt2[k - 1]["ID_Song"].ToString();
-                    //MessageBox.Show(id2);
                     if (id2.Substring(id2.Length - (nn + 1), nn + 1) != Convert.ToString(k))
                     {
-                        //MessageBox.Show("ID2 = "+id2.Substring(id2.Length - (nn + 1), nn + 1));
                         id2 = "S";
                         for (int zero = 1; zero <= 2 - (nn); zero++)
                         {
@@ -66,8 +58,7 @@ namespace symphony
                 //IF THERE IS NO SPACE ROW
                 if (!state)
                 {
-                    MessageBox.Show("2");
-                    xx = dt2.Count;
+                    xx = dt2.Count+1;
                     id2 = "S";
                     for (int zero = 1; zero <= 2 - (xx / 10); zero++)
                     {
@@ -101,14 +92,10 @@ namespace symphony
                     {
                         listBox1.Items.Add(files[i]);
                         paths.Add(path[i]);
-                        da = new SqlDataAdapter("SELECT ID_Song FROM Song", conn);
+                        da = new SqlDataAdapter("SELECT * FROM Song", conn);
+                        ds = new DataSet();
                         da.Fill(ds, "Song");
-                        DataRowCollection dt2 = ds.Tables["Song"].Rows;
-                        for (int k = 0; k < dt2.Count - 1; k++)
-                        {
-                            MessageBox.Show(dt2[k]["ID_Song"].ToString());
-                            
-                        }
+                        DataRowCollection dt3 = ds.Tables["Song"].Rows;
                         AddData(files[i], path[i]);
                     }
 

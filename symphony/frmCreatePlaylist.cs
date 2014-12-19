@@ -134,6 +134,7 @@ namespace symphony
                            string id2;
                             bool state = false;
                             da = new SqlDataAdapter("SELECT * FROM Song", conn);
+                            ds = new DataSet();
                             da.Fill(ds, "Song");
                             DataRowCollection dt2 = ds.Tables["Song"].Rows;
                             for (int k = 1; k <= dt2.Count;k++)
@@ -192,6 +193,7 @@ namespace symphony
                     {
                         bool state = false;
                         da = new SqlDataAdapter("SELECT * FROM Song", conn);
+                        ds = new DataSet();
                         da.Fill(ds, "Song");
                         DataRowCollection dt2 = ds.Tables["Song"].Rows;
                         for (int k = 1; k <= dt2.Count; k++)

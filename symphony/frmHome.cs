@@ -268,16 +268,16 @@ namespace symphony
             }
             else
             {
-                listBox1.SelectedIndex=files.Length-1;
+                listBox1.SelectedIndex=listBox1.Items.Count-1;
                 axWindowsMediaPlayer1.URL = paths[listBox1.SelectedIndex];
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (listBox1.SelectedIndex < files.Length-1)
+            if (listBox1.SelectedIndex < listBox1.Items.Count-1)
             {
-                listBox1.SelectedIndex--;
+                listBox1.SelectedIndex++;
                 axWindowsMediaPlayer1.URL = paths[listBox1.SelectedIndex];
             }
             else
