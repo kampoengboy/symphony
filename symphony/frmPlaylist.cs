@@ -26,6 +26,7 @@ namespace symphony
         string sql;
         DataSet ds;
         int pos;
+        public string idplaylist;
         private void frmPlaylist_Load(object sender, EventArgs e)
         {    
             string pesan;
@@ -69,7 +70,8 @@ namespace symphony
             {
                 conn.Open();
                 ds = new DataSet();
-                string query = "SELECT Name,Location FROM Song WHERE Song.IDPlaylist='" + id[listBox1.SelectedIndex] + "'";
+                idplaylist = id[listBox1.SelectedIndex];
+                string query = "SELECT * FROM Song WHERE Song.IDPlaylist='" + id[listBox1.SelectedIndex] + "'";
                 da = new SqlDataAdapter(query, conn);
                 da.Fill(ds, "Song");
                 DataRowCollection dt = ds.Tables["Song"].Rows;

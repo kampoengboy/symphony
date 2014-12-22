@@ -65,19 +65,19 @@
             this.customizeToolStripMenuItem,
             this.deletePlaylistToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(148, 48);
             // 
             // customizeToolStripMenuItem
             // 
             this.customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
-            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.customizeToolStripMenuItem.Text = "Customize";
             this.customizeToolStripMenuItem.Click += new System.EventHandler(this.customizeToolStripMenuItem_Click);
             // 
             // deletePlaylistToolStripMenuItem
             // 
             this.deletePlaylistToolStripMenuItem.Name = "deletePlaylistToolStripMenuItem";
-            this.deletePlaylistToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.deletePlaylistToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.deletePlaylistToolStripMenuItem.Text = "Delete Playlist";
             this.deletePlaylistToolStripMenuItem.Click += new System.EventHandler(this.deletePlaylistToolStripMenuItem_Click);
             // 
@@ -88,6 +88,8 @@
             this.ClientSize = new System.Drawing.Size(748, 437);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.listBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmView";
             this.Text = "View Playlist";
             this.Load += new System.EventHandler(this.frmView_Load);

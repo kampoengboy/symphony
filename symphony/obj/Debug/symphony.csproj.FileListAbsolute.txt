@@ -59,3 +59,4 @@ C:\Users\Mike\Documents\symphony\symphony\obj\Debug\symphony.jumptotime.resource
 C:\Users\Mike\Documents\symphony\symphony\obj\Debug\symphony.jumptotrack.resources
 C:\Users\Mike\Documents\symphony\symphony\obj\Debug\symphony.frmPlaylist.resources
 C:\Users\Mike\Documents\symphony\symphony\obj\Debug\symphony.frmView.resources
+C:\Users\Mike\Documents\symphony\symphony\obj\Debug\symphony.frmviewrecentplay.resources

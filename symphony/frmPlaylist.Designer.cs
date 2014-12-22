@@ -58,6 +58,8 @@
             this.ClientSize = new System.Drawing.Size(683, 475);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.listBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmPlaylist";
             this.Text = "Playlist";
             this.Load += new System.EventHandler(this.frmPlaylist_Load);

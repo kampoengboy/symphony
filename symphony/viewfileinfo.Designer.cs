@@ -357,6 +357,8 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtLocation);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "viewfileinfo";
             this.Text = "File Info";
             this.Load += new System.EventHandler(this.viewfileinfo_Load);

@@ -46,6 +46,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(389, 353);
             this.Controls.Add(this.listBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "jumptotrack";
             this.Text = "Jump to Track";
             this.Load += new System.EventHandler(this.jumptotrack_Load);

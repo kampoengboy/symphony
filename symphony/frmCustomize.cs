@@ -48,7 +48,7 @@ namespace symphony
                         }
                         id2 += k;
                         idsong.Add(id2);
-                        query = "INSERT INTO Song VALUES('" + id2 + "','" + file + "','" + path + "','" + id + "')";
+                        query = "INSERT INTO Song VALUES('" + id2 + "','" + file + "','" + path + "','" + id + "'," + "0" + ")";
                         da.InsertCommand = new SqlCommand(query, conn);
                         da.InsertCommand.ExecuteNonQuery();
                         state = true;
@@ -66,7 +66,7 @@ namespace symphony
                     }
                     id2 += xx;
                     idsong.Add(id2);
-                    query = "INSERT INTO Song VALUES('" + id2 + "','" + file + "','" + path + "','" + id + "')";
+                    query = "INSERT INTO Song VALUES('" + id2 + "','" + file + "','" + path + "','" + id + "'," + "0" +")";
                     da.InsertCommand = new SqlCommand(query, conn);
                     da.InsertCommand.ExecuteNonQuery();
                 }

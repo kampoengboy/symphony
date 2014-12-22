@@ -39,6 +39,7 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.playlistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewPlaylistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewNumberPlayedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.playToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.jumpToTimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -139,7 +140,8 @@
             // playlistToolStripMenuItem
             // 
             this.playlistToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.viewPlaylistToolStripMenuItem});
+            this.viewPlaylistToolStripMenuItem,
+            this.viewNumberPlayedToolStripMenuItem});
             this.playlistToolStripMenuItem.Name = "playlistToolStripMenuItem";
             this.playlistToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.playlistToolStripMenuItem.Text = "Playlist";
@@ -147,9 +149,16 @@
             // viewPlaylistToolStripMenuItem
             // 
             this.viewPlaylistToolStripMenuItem.Name = "viewPlaylistToolStripMenuItem";
-            this.viewPlaylistToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.viewPlaylistToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.viewPlaylistToolStripMenuItem.Text = "View Playlist";
             this.viewPlaylistToolStripMenuItem.Click += new System.EventHandler(this.viewPlaylistToolStripMenuItem_Click);
+            // 
+            // viewNumberPlayedToolStripMenuItem
+            // 
+            this.viewNumberPlayedToolStripMenuItem.Name = "viewNumberPlayedToolStripMenuItem";
+            this.viewNumberPlayedToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.viewNumberPlayedToolStripMenuItem.Text = "View Number Played";
+            this.viewNumberPlayedToolStripMenuItem.Click += new System.EventHandler(this.viewNumberPlayedToolStripMenuItem_Click);
             // 
             // playToolStripMenuItem
             // 
@@ -283,7 +292,6 @@
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(232, 45);
             this.trackBar1.TabIndex = 9;
-            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             this.trackBar1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.trackBar1_MouseDown);
             this.trackBar1.MouseLeave += new System.EventHandler(this.trackBar1_MouseLeave);
             this.trackBar1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.trackBar1_MouseUp);
@@ -357,6 +365,7 @@
             this.Controls.Add(this.btnChoosePlaylist);
             this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "frmHome";
@@ -409,5 +418,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.ToolStripMenuItem viewNumberPlayedToolStripMenuItem;
     }
 }
