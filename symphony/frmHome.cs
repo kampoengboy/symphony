@@ -173,6 +173,8 @@ namespace symphony
             {
                 listBox1.SelectedIndex = jumptrack.idx;
                 axWindowsMediaPlayer1.URL= paths[jumptrack.idx];
+                updateSong();
+                pause = false;
             }
         }
 

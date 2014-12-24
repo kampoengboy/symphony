@@ -86,7 +86,7 @@
             this.btnChoosePlaylist.Name = "btnChoosePlaylist";
             this.btnChoosePlaylist.Size = new System.Drawing.Size(100, 30);
             this.btnChoosePlaylist.TabIndex = 2;
-            this.btnChoosePlaylist.Text = "Add To Playlist";
+            this.btnChoosePlaylist.Text = "Load Playlist";
             this.btnChoosePlaylist.UseVisualStyleBackColor = true;
             this.btnChoosePlaylist.Click += new System.EventHandler(this.button1_Click);
             // 

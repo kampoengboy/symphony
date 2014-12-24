@@ -89,6 +89,8 @@
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmCustomize";
             this.Text = "Customize Playlist";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmCustomize_FormClosed);
