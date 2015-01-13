@@ -53,6 +53,7 @@ namespace symphony
             if(playlist.state)
             {
                 listBox1.Items.Clear();
+                paths.Clear();
                 for (int i = 0; i < playlist.list.Count; i++)
                 {
                     listBox1.Items.Add(playlist.list[i].Item1);
@@ -427,6 +428,25 @@ namespace symphony
         {
             frmviewrecentplay recentplay = new frmviewrecentplay();
             recentplay.Show();
+        }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            conn.Open();
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Song WHERE IDPlaylist='" + idplaylist + "'", conn);
+            da.Fill(ds, "Song");
+            DataRowCollection dt = ds.Tables["Song"].Rows;
+            idsong.Clear();
+            paths.Clear();
+            listBox1.Items.Clear();
+            for (int i = 0; i < dt.Count; i++)
+            {
+                listBox1.Items.Add(dt[i]["Name"].ToString());
+                paths.Add(dt[i]["Location"].ToString());
+                idsong.Add(dt[i]["ID_Song"].ToString());
+            }
+            conn.Close();
         }        
     }
 }

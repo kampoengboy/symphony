@@ -173,6 +173,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="recentlyplayed.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -215,6 +216,18 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1898873_10201842739020524_616679507_o.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10516843_10201672697257880_1374143994825985650_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10577170_10202459013105793_5204607458774276886_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10685481_10202641851624226_8525946332516902187_n.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
